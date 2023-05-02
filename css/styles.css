@@ -3,13 +3,15 @@
 body {
     background-image: url('https://e1.pxfuel.com/desktop-wallpaper/764/255/desktop-wallpaper-rainbow-program-code-and-program.jpg');
     /*background-color: #26B4BC;*/
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    /*flex: auto;*/
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .wrapper {
-    max-inline-size: 900px;
+    max-inline-size: 800px;
     margin: auto;
 }
 
@@ -19,6 +21,7 @@ body {
 }
 
 .player video {
+    inset: 0;
     inline-size: 100%;
     aspect-ratio: 16/9;
     vertical-align: middle;
@@ -59,7 +62,8 @@ body {
 }
 
 .player-overlay {
-    position: absolute;
+    flex: auto;
+    /*position: absolute;*/
     inset: 0;
     opacity: 0;
     transition: .3s opacity;
