@@ -13,11 +13,11 @@
 }
 
 #play {
-    background-image: url('../images/play.svg');
+    background-image: url('../images/player1.svg');
 }
 
 #pause {
-    background-image: url('../images/pause.svg');
+    background-image: url('../images/stop.svg');
 }
 
 #backward {
@@ -33,5 +33,5 @@
 }
 
 .sec-button {
-    background-color: #000000;
+    background-image: url('../images/time.svg');
 }
