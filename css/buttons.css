@@ -27,3 +27,11 @@
 #forward {
     background-image: url('../images/+10.svg');
 }
+
+#reset {
+    background-image: url('../images/reset.svg');
+}
+
+.sec-button {
+    background-color: #000000;
+}

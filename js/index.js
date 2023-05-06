@@ -60,3 +60,25 @@ function handleInput() {
     $video.currentTime = $progress.value
     //console.log($progress.value)
 }
+
+let $reset = document.querySelector('#reset');
+$reset.addEventListener('click', handleReset)
+
+function handleReset() {
+    $reset = $video.duration
+    $video.currentTime = $video.currentTime - $reset
+    //console.log($video.duration)
+}
+
+function setSeconds(sec) {
+    $video.currentTime = sec 
+}
+
+let $setSeconds = document.querySelector('#set-seconds');
+$setSeconds.addEventListener('click',handleSeconds)
+
+function handleSeconds() {
+    let seconds = prompt('enter the time seconds');
+    setSeconds(seconds);
+}
+
