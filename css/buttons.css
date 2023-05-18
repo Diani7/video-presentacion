@@ -35,3 +35,28 @@
 .sec-button {
     background-image: url('../images/time.svg');
 }
+
+#speed {
+    background-image: url('../images/speed.svg');
+}
+
+#sizer-medio {
+    background-color: aliceblue;
+    background-image: url('../images/sizem.svg');
+}
+
+#sizer-pequeño {
+    background-color: aliceblue;
+    background-image: url('../images/sizes.svg');
+}
+
+#sizer-grande {
+    background-color: aliceblue;
+    background-image: url('../images/sizel.svg');
+}
+
+#sizer-xgrande {
+    background-color: aliceblue;
+    background-image: url('../images/sizexl.svg');
+}
+

@@ -26,8 +26,8 @@ function handlePause() {
 }
 
 //Agregando los eventos que necesito para el clic retroceder y adelantar
-$backward.addEventListener('click',handleBackward)
-$forward.addEventListener('click',handleForward)
+$backward.addEventListener('click', handleBackward)
+$forward.addEventListener('click', handleForward)
 
 function handleBackward() {
     //$video.currentTime = $video.currentTime - 10
@@ -40,7 +40,7 @@ function handleForward() {
     //console.log('para adelantar 10 segundos')
 }
 
-const $progress =document.querySelector('#progress')
+const $progress = document.querySelector('#progress')
 $video.addEventListener('loadedmetadata', handleLoaded)
 $video.addEventListener('timeupdate', handleTimeupdate)
 
@@ -67,18 +67,71 @@ $reset.addEventListener('click', handleReset)
 function handleReset() {
     $reset = $video.duration
     $video.currentTime = $video.currentTime - $reset
+    clickCounter = 1;
+    $video.playbackRate = 1;
     //console.log($video.duration)
 }
 
 function setSeconds(sec) {
-    $video.currentTime = sec 
+    $video.currentTime = sec
 }
 
 let $setSeconds = document.querySelector('#set-seconds');
-$setSeconds.addEventListener('click',handleSeconds)
+$setSeconds.addEventListener('click', handleSeconds)
 
 function handleSeconds() {
     let seconds = prompt('enter the time seconds');
-    setSeconds(seconds);
+    if (seconds>0) {
+        if ($video.duration >= seconds) {
+            setSeconds(seconds);
+        }else{
+            alert ('the value cannot be more than the video length');
+        }
+    }else if(seconds<0){
+        alert ('the value cannot be less than zero (0)');
+    }else{
+        alert('Enter a number in seconds');
+    }
 }
 
+let $speed = document.querySelector('#speed');
+let clickCounter = 1;
+$speed.addEventListener('click', handleSpeed)
+
+function handleSpeed() {
+    clickCounter = clickCounter + 0.5;
+    $video.playbackRate = clickCounter;
+}
+
+let $videoSizerM = document.querySelector('#sizer-medio')
+$videoSizerM.addEventListener('click', handlesizeMed)
+
+function handlesizeMed(){
+    $video.height= 450;
+    $video.width = 800;
+}
+
+let $videoSizer = document.querySelector('#sizer-pequeño')
+$videoSizer.addEventListener('click', handleSizeSmall)
+
+function handleSizeSmall(){
+    $video.height= 270;
+    $video.width = 630;
+ 
+}
+
+let $videoSizerL = document.querySelector('#sizer-grande')
+$videoSizerL.addEventListener('click', handlesizeLarge)
+
+function handlesizeLarge(){
+    $video.height= 500;
+    $video.width = 850;
+}
+
+let $videoSizerXl = document.querySelector('#sizer-xgrande')
+$videoSizerXl.addEventListener('click', handlesizeXlarge)
+
+function handlesizeXlarge(){
+    $video.height= 600;
+    $video.width = 900;
+}
